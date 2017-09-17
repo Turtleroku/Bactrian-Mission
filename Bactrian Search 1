@@ -1,0 +1,63 @@
+# Copyright (c) 2017 by Rob Grote
+# Endless Sky is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+mission "BacSearch 1"
+	name "Search for Frank"
+	description "Find the person providing the bounty"
+	source Valhalla
+	to complete
+		has "BacSearch" = 1
+	to offer
+		has "free worlds plot completed"
+	on offer
+		conversation
+			`While your ship is refueling you go to the bar to see if you can find some work. After the bartender brings the Juma Jam juice you ordered, you ask her, 
+			`	"Do you know of any special jobs not on the boards right now?"
+			`	"From what I've heard the Deep just put a bounty out for a nasty pirate fleet and there is a priority shipment for Memory that just arrived this morning."`
+			choice
+				`	"Where are these Pirates raiding?"`
+					goto piratehunt
+				`	"Do you know what is in the shipment?"`
+					goto cargotomemory
+				`	"Is there anything else"`
+					goto pipedream
+			label piratehunt
+				`	"A Marauder Leviathan named Revenge of Ra has been attacking ships going to the Paradise Worlds near the Alphard system. The navy hasn't been able to catch them yet. Maybe you could.`
+			choice
+				`	Do you know of any other jobs?`
+					goto barconvo1
+			label barconvo1
+				`	"There is a shipment to Memory and there is some sort of bounty for ship blueprints."`
+				choice
+					`	"Do you know what is in the shipment?"`
+						goto cargotomemory
+					`	"Do you know who is offering the bounty?"`
+						goto pipedream2
+			label barconvo2	
+			`	"The navy is having some problems with a local pirate fleet and there is some sort of bounty for ship blueprints."`
+			choice
+				`	"Where are these Pirates raiding?"`
+					goto piratehunt
+			label cargotomemory
+			`	"Some sort of bacteria or virus is going to a research lab on Memory."`
+			choice
+				`	Do you know of any other jobs?`
+					goto barconvo2
+
+			label pipedream
+			`	She leans in and says "I have heard some freighter captains talking about a bounty for some ship blueprints. Aside from those three you can find more jobs on the job board."`
+			choice
+				`	"Do you know who is offering the bounty?"`
+				`	The bartender says, "A guy called Frank, from what I've heard he's a son of one of the Lionheart CEO's. You could probably find him over by the job boards. He will be wearing the lionheart family crest."`
+				choice
+					`	"Sounds interesting, thanks!"
+						accept
+					`	"No thanks, I don't need your help finding missions."
+						decline
+	on fail
+		dialog `You have failed the starting mission to find the Bactrian. If you want to acquire the Bactrian city-ship, revert to the autosave or another earlier snapshot of the game.`
+	on decline
+		dialog "You think to yourself, "Battleships are pretty cool, maybe I should reload...nah"
+	on accept
+		"BacSearch" = 1
