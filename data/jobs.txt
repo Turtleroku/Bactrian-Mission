@@ -1,36 +1,37 @@
-﻿mission "Pathogens to Memory"
-	name "Transport Research Pathogens to Memory"
+﻿# Copyright (c) 2017 by Rob Grote
+# Endless Sky is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+mission "Transport Pathogens to Memory"
 	job
-	description "Deliver Class 1 pathogens to <destination>. Payment is <payment>."
-	cargo 20
+	description "Deliver Class 1 pathogens to Memory. Payment will be <payment>."
+	cargo "Class 1 Pathogens" 20
 	source Valhalla
+	destination Memory
 	to offer
-		Has "bacsearch 1: offered"
-	attributes north
-	destination "Memory"
+		has "bacsearch 1"
+	on accept
+		dialog "You watch as a team of specialists in HAZMAT gear load the cargo aboard your ship."
 	on complete
-		payment
 		payment 100000
 		dialog "You drop off your cargo of pathogens and collect your payment of <payment>."
 
-
-
-mission "Pirates at Alphard"
-	name "Hunt down Revenge of Ra"
+mission "Hunt down Revenge of Ra"
+	description "A Marauder vessel named Revenge of Ra has been leading a fleet and attacking merchants near the Alphard system. Destroy the whole fleet and return to Valhalla for payment <payment>."
 	job
-	description "A Marauder vessel named <npc>, leading a fleet, has been attacking merchants near the <system> system. Destroy the whole fleet and return to Valhalla for payment (<payment>)."
 	source Valhalla
+	waypoint Alphard
+	destination Valhalla
 	to offer
-		has "bacsearch 1: offered"
-	attributes north
+		has "bacsearch 1"
+	on accept
+		dialog "A navy officer gives you priority bounty-hunter papers for this job."
 	npc kill
-	government Bounty
-	system Alphard
-	personality heroic nemesis staying
+		government Bounty
+		system Alphard
+		personality heroic nemesis staying
 		ship "Maurauder Leviathan" "Revenge of Ra"
 		ship "Marauder Raven" "Chains of Anubis"
-		ship "Marauder Raven" "Screeches of "
-		ship "Marauder Raven" "Sting of Hedatet"
 		ship "Marauder Raven" "Kherty's Pulverizer"
 		ship "Marauder Raven" "Wepwawet the chaotic"
 		ship "Modified Argosy" "Boon of Mehit"
@@ -41,9 +42,7 @@ mission "Pirates at Alphard"
 		ship "Osprey" "Shu the light"
 		ship "Marauder Falcon" "Rage of Kek"
 		ship "Marauder Falcon" "Roar of Maahas"
-		personality heroic staying nemesis target
-
-		dialog "The <npc> and their fleet have been eliminated. You can claim the bounty payment by returning to <destination>."
+		dialog "Their fleet has been eliminated. You can claim the bounty by returning to <destination>."
 	on complete
 		payment 500000
 		dialog "The government of <planet> gratefully pays you <payment> for eliminating the <npc> and their fleet."

@@ -2,8 +2,6 @@
 # Endless Sky is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 # Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-#CHANGE it so first mission source is anywhere in deep and hte whole convo occurs in bacsearh 1b?
-
 
 mission "bacsearch 1"
 	name "Interesting Bounty"
@@ -26,6 +24,8 @@ mission "bacsearch 1"
 				`	"Is there anything else."`
 					goto pipedream
 			label piratehunt
+			apply
+				set bacsearchp
 			`	"A Marauder Leviathan named Revenge of Ra has been attacking ships going to the Paradise Worlds near the Alphard system. The navy hasn't been able to catch them yet. Maybe you could."`
 			choice
 				`	Do you know of any other jobs?`
@@ -45,7 +45,9 @@ mission "bacsearch 1"
 				`	"Do you know who is offering the bounty."`
 					goto pipedream
 			label cargotomemory
-			`	"They are shipping some sort of bacteria or virus to the research labs on Memory."`
+			apply
+				set bacsearchc
+			`	"They are shipping some sort of bacteria or virus from Valhalla to the research labs on Memory."`
 			choice
 				`	"Do you know of any other jobs."`
 					goto barconvo2
@@ -86,7 +88,6 @@ mission "bacsearch 1b library"
 		has "bacsearch 1: done"
 	to fail
 		has "bacsearch 2"
-
 
 #~part2
 
