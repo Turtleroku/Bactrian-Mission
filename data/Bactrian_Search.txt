@@ -255,9 +255,9 @@ mission "bactrian search 2a"
 			label lsnotdone
 			`	After a whole day of searching you know a lot more about the Bactrian but didn't find its schematics. There has to be more information here somewhere.`
 			choice
-				`Go look through the computer again.`
+				`Look through the computer again.`
 					goto librarymenu
-				`Leave to go find the pirates.`
+				`Leave to go find the pirates, you can always come back to the library.`
 					depart
 	on accept
 		fail "bacsearch 1b pirates"
@@ -589,8 +589,8 @@ mission "bactrian search: PMB"
 			label giveuppirates
 			apply
 				set epicpiratebattleNO
-			`	You walk back to you ship, planning your route back to the library.`
-				depart
+			`	You walk back to you ship, planning your route to the library.`
+				flee
 			label destroypmb
 			`	You walk back to your ship, planning exactly how to blow up this moon.`
 				decline

@@ -1,4 +1,6 @@
-copyright
+# Copyright (c) 2017 by Rob Grote
+# Endless Sky is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 ship "Hepatica"
 	sprite "ship/Hepatica"
@@ -123,12 +125,12 @@ ship "Bactrian"
 		"shields" 17500
 		"hull" 8600
 		"required crew" 70
-		"bunks" 245	
+		"bunks" 200
 		"mass" 940
-		"drag" 16.1	
+		"drag" 16.1
 		"heat dissipation" .4
 		"fuel capacity" 700
-		"cargo space" 530
+		"cargo space" 480
 		"outfit space" 740
 		"weapon capacity" 300
 		"engine capacity" 180
