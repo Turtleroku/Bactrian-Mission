@@ -17,39 +17,39 @@ mission "bacsearch 1"
 			`	"Do you know of any special jobs not on the boards right now?"
 			`	"From what I've heard the Deep just put a bounty out for a nasty pirate fleet and there is a priority shipment from Valhalla to Memory waiting for transport."`
 			choice
-				`	"Where are these Pirates raiding."`
+				`	"Where are these Pirates raiding?"`
 					goto piratehunt
-				`	"Do you know what is in the shipment."`
+				`	"Do you know what is in the shipment?"`
 					goto cargotomemory
-				`	"Is there anything else."`
+				`	"Is there anything else?"`
 					goto pipedream
 			label piratehunt
 			apply
 				set bacsearchp
-			`	"A Marauder Leviathan named Revenge of Ra has been attacking ships going to the Paradise Worlds near the Alphard system. The navy hasn't been able to catch them yet. Maybe you could."`
+			`	"A Marauder Leviathan named Revenge of Ra has been attacking ships going to the Paradise Worlds near the Alphard system. The navy hasn't been able to catch them yet. Maybe you could?"`
 			choice
 				`	Do you know of any other jobs?`
 					goto barconvo1
 			label barconvo1
 			`	"There is a shipment from Valhalla to Memory and there is some sort of bounty for ship blueprints."`
 			choice
-				`	"Do you know what is in the shipment."`
+				`	"Do you know what is in the shipment?"`
 					goto cargotomemory
-				`	"Do you know who is offering the bounty."`
+				`	"Do you know who is offering the bounty?"`
 					goto pipedream
 			label barconvo2
 			`	"The navy is having some problems with a local pirate fleet and there is some sort of bounty for ship blueprints."`
 			choice
-				`	"Where are these Pirates raiding."`
+				`	"Where are these Pirates raiding?"`
 					goto piratehunt
-				`	"Do you know who is offering the bounty."`
+				`	"Do you know who is offering the bounty?"`
 					goto pipedream
 			label cargotomemory
 			apply
 				set bacsearchc
 			`	"They are shipping some sort of bacteria or virus from Valhalla to the research labs on Memory."`
 			choice
-				`	"Do you know of any other jobs."`
+				`	"Do you know of any other jobs?"`
 					goto barconvo2
 			label pipedream
 			`	She leans in and says "I have heard some freighter captains talking about a bounty for some ship blueprints. Aside from those three you can find more jobs on the job board."`
@@ -66,7 +66,7 @@ mission "bacsearch 1"
 			`You head over to the job board to see if you can find Frank. A man in a lionheart suit is talking to some navy officers about the bounty so you wait till they are done. When the officers leave you approach him and introduce yourself, "Hello, I'm <first> are yo..." He cuts you off saying, "Hello, I am Frank do you want to make 10 million credits."`
 			`Ignoring his brusque manner you ask,`
 			choice
-				`	"Are there any strings attached."`
+				`	"Are there any strings attached?"`
 					goto question
 				`	"No that sounds too suspicious."`
 			label question
@@ -106,7 +106,7 @@ mission "bactrian search 2a"
 		event "pirate moon base lock
 		conversation
 			`	You arrive at Alexandria station and are stunned by the amount of books and documents you see on just the main floor.`
-			`An automated message greets you, "The information available at the Alexandria store house requires 3,094 floors to store all the physical and ...." You ignore the rest and start looking for a computer terminal. While searching through the files a chipper librarian walks up and asks "Would you like any assistance."`
+			`An automated message greets you, "The information available at the Alexandria store house requires 3,094 floors to store all the physical and ...." You ignore the rest and start looking for a computer terminal. While searching through the files a chipper librarian walks up and asks "Would you like any assistance?"`
 			choice
 				`	"No, I don't need directions, I'll just use the computer."`
 					goto librarymenu0
@@ -287,7 +287,7 @@ mission "bacsearch 1b pirates"
 	on enter Almaaz
 		conversation
 			`	Within seconds of exiting hyperspace you are hailed by a Freighter.`
-			`	The captian says, "You know you're entering pirate space, are you looking for a fight."`
+			`	The captian says, "You know you're entering pirate space, are you looking for a fight?"`
 			choice
 				`	"Yea, Pirates are space scum."`
 					goto killpirates
@@ -301,7 +301,7 @@ mission "bacsearch 1b pirates"
 			label peacefulsearch
 			apply
 				set peacepirates
-			`	"Ya mean da old colonization ships."`
+			`	"Ya mean da old colonization ships?"`
 			choice
 				`	"Specifically the Bactrian, I am looking for its schematics. Do you happen to know where the oldest pirate gangs hideout?"`
 			`	"You could try asking around on Freedom but you probably shouldn't mess with those pirates."`
@@ -316,7 +316,6 @@ mission "bacsearch 1b pirates"
 	on complete
 		conversation
 			`	You ask around the spaceport but no one seems willing to talk. You can't tell if its from respect or fear of the pirates.`
-#		`Leroy your new co-pilot leans over and says "We probably should've followed that interceptor."`
 
 mission "bactrian search: hostile"
 	landing
@@ -411,10 +410,10 @@ mission "bactrian search: Quandry"
 		conversation
 			`	A damage merchant ship, maybe they saw the Occam's Razor.`
 			choice
-				`	"Hello captain did you happen to see a pirate Interceptor flying through here recently."`
+				`	"Hello captain did you happen to see a pirate Interceptor flying through here recently?"`
 					goto hint
 			label hint
-			`	"Yes we did, they knocked out our engines before jumping to Unagi. Would you mind helping patch us up so we can get out of here."`
+			`	"Yes we did, they knocked out our engines before jumping to Unagi. Would you mind helping patch us up so we can get out of here?"`
 			choice
 				`	"Sure thing I can spare a few minutes."`
 					accept
@@ -502,7 +501,7 @@ mission "bactrian search: 2b special"
 				`	"Specifically the Bactrian, I am looking for its schematic."`
 			`	"Wow you must be gett'n a pretty hefty paycheck to be spend'n so much time on that wild goose chase."`
 			choice
-				`	"Anyways...Do you know anything about the Bactrian expedition."`
+				`	"Anyways...Do you know anything about the Bactrian expedition?"`
 			`	"Meet us at Unagi to discuss this further."`
 				accept
 	on enter Unagi
@@ -550,11 +549,11 @@ mission "bactrian search: PMB"
 				`	"I'm looking for the Bactrian schematics, I can pay 1 million credits."
 					goto paynohepatica?
 			label paybactrian?
-			`	"No, that's one of her sister models, the Hepatica. That old beauty is nearly 800 years old, we've made some modifications over time. Don't even think about asking for a tour, I'm not letting a sketchy person like you wandering around my shi."`
+			`	"No, that's one of her sister models, the Hepatica. That old beauty is nearly 800 years old, we've made some modifications over time. Don't even think about asking for a tour, I'm not letting a sketchy person like you wandering around my ship."`
 			`	You think to yourself, I'm not the one wearing an eyepatch. Thankfully you didn't say that out loud.`
 			`	She stares straight at you with her one good eye. "I don't have the schematics for the Bactrian but I do know where you might find one. But it's going to be a hassle to copy all the data, I'd have to pull some crews off repairs and maintenance. You are going to have to wait awhile to get all that done." Her one eye is starting to make you feel creepy.`
 			choice
-				`	"I will pay two million for both the schematics and the bactrian location. That's as high as I'm goin."`
+				`	"I will pay two million for both the schematics and the bactrian location. That's as high as I'm going."`
 					goto haggling
 				`	"Would three million for both speed things up."`
 					goto haggling
@@ -563,12 +562,12 @@ mission "bactrian search: PMB"
 			choice
 				`	"That's as high as I'm going."`
 					goto haggling2
-				`	"Would two million speed things up."`
+				`	"Would two million speed things up?"`
 					goto haggling2
 			label haggling
 			`	"You're not very experienced at haggling are you?" There is a harsh glint in her eye. "I've heard there's a 10 million credit bounty for the Bactrian schematics from someone in the Deep, I'll take five million."`
 			choice
-				`	"If that's what it's going to take, now where am I headed."`
+				`	"If that's what it's going to take, now where am I headed?"`
 					goto payforinfo
 				`	"I'd say you were robbing me blind, but you're a pirate..."`
 					goto piratejoke
@@ -601,14 +600,14 @@ mission "bactrian search: PMB"
 				set "hepatica unlocked"
 			`	She says, "Hahaha, I am starting to like you, okay 4.8 million and it's all yours."`
 			choice
-				`	"You are so generous...now where was the expedition headed."`
+				`	"You are so generous...now where was the expedition headed?"`
 				`	"That's a terrible discount."`
 			`	"Go to the Mebutsa system, you will have your data and be refueled within the hour." As she walks away she slides into a piratey slang yelling at her subordinates with ar's and mates. It seems she enjoys being the pirate captain.`
 				accept
 			label haggling2
 			`	"You're not very experienced at haggling are you?" There is a harsh glint in her eye. "I've heard there's a 10 million credit bounty for the Bactrian schematics from someone in the Deep, I'll take three million."`
 			choice
-				`	"If that's what it's going to take, now where am I headed."`
+				`	"If that's what it's going to take, now where am I headed?"`
 					goto payforinfo2
 				`	"I'd say you were robbing me blind, but you're a pirate..."`
 					goto piratejoke2
@@ -624,7 +623,7 @@ mission "bactrian search: PMB"
 				payment -2800000
 			`	She says, "Hahaha, I am starting to like you, okay 2.8 million and it's all yours."`
 			choice
-				`	"You are so generous...now where was the expedition headed."`
+				`	"You are so generous...now where was the expedition headed?"`
 				`	"That's a terrible discount."`
 			`	"Go to the Mebutsa system, you will have your data and be refueled within the hour." As she walks away she slides into a piratey slang yelling at her subordinates with ar's and mates. It seems she enjoys being the pirate captain a bit.`
 				accept
@@ -754,7 +753,7 @@ mission "epbguide"
 			has "epbconvo: done"
 	on offer
 		conversation
-			`	As you are landing an angry looking pirate contacts you, "What do you want."`
+			`	As you are landing an angry looking pirate contacts you, "What do you want?"`
 			choice
 				`	"I am searching for the Bactrian city-ship and I heard that you might know where to find it."`
 			`	"We don't have anything like that here. Will you leave if I tell you where to find a crashed Bactrian?`
@@ -794,7 +793,7 @@ mission "bactrian search 3a-1"
 				`	Search the Western mountain range.`
 					goto west
 			label ne
-			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.` #Low altitude scans of the rest of the mountain range revealed nothing
+			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.`
 			choice
 				`	Search the Western mountian range.`
 					goto west
@@ -836,12 +835,12 @@ mission "bactrian search 3a-1"
 				`	Unholster your handgun and take a shot.`
 				`	Head back into the hall and wait for your crew.`
 					goto slowsearch2
-			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practices in the gun range was a really bad idea.)`
+			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practice sessions in the gun range was a really bad idea.)`
 			`	You have to roll to the side to avoid the claws as the big cat comes flying at you.  Backing away you start pulling the trigger as fast as you can. By sheer luck one of your shots hit it in the head and you just sit down trying to catch your breath.`
 			`	A few minutes later your crew shows up and you tell them to start looking for datadisks.`
 				goto foundit
 			label foundit
-			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.` #completed # mission "bactrian search 3: done"
+			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.`
 			choice
 				`	Look for more treasures on the ship.`
 					goto treasurehunter
@@ -864,7 +863,7 @@ mission "bactrian search 3a-1"
 	on complete
 		event "bactrian for sale" #33
 		conversation
-			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it."`
+			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
 				`	"Yes, but I ran into some problems so I want a bit more for the bounty."`
 				`	"Yes I did, here are the schematic."`
@@ -894,7 +893,7 @@ mission "bactrian search 3a-2"
 				`	Search the Western mountain range.`
 					goto west
 			label ne
-			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.` #Low altitude scans of the rest of the mountain range revealed nothing
+			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.`
 			choice
 				`	Search the Western mountian range.`
 					goto west
@@ -936,12 +935,12 @@ mission "bactrian search 3a-2"
 				`	Unholster your handgun and take a shot.`
 				`	Head back into the hall and wait for your crew.`
 					goto slowsearch2
-			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practices in the gun range was a really bad idea.)`
+			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practice sessions in the gun range was a really bad idea.)`
 			`	You have to roll to the side to avoid the claws as the big cat comes flying at you.  Backing away you start pulling the trigger as fast as you can. By sheer luck one of your shots hit it in the head and you just sit down trying to catch your breath.`
 			`	A few minutes later your crew shows up and you tell them to start looking for datadisks.`
 				goto foundit
 			label foundit
-			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.` #completed # mission "bactrian search 3: done"
+			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.`
 			choice
 				`	Look for more treasures on the ship.`
 					goto treasurehunter
@@ -964,7 +963,7 @@ mission "bactrian search 3a-2"
 	on complete
 		event "crataegus for sale" #33
 		conversation
-			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it."`
+			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
 				`	"Yes, but I ran into some problems so I want a bit more for the bounty."`
 				`	"Yes I did, here are the schematic."`
@@ -1043,12 +1042,12 @@ mission "bactrian search 3b-1"
 				`	Unholster your handgun and take a shot.`
 				`	Head back into the hall and wait for your crew.`
 					goto slowsearch2
-			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practices in the gun range was a really bad idea.)`
+			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practice sessions in the gun range was a really bad idea.)`
 			`	You have to roll to the side to avoid the claws as the big cat comes flying at you.  Backing away you start pulling the trigger as fast as you can. By sheer luck one of your shots hit it in the head and you just sit down trying to catch your breath.`
 			`	A few minutes later your crew shows up and you tell them to start looking for datadisks.`
 				goto foundit
 			label foundit
-			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.` #completed # mission "bactrian search 3: done"
+			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.`
 			choice
 				`	Look for more treasures on the ship.`
 					goto treasurehunter
@@ -1073,7 +1072,7 @@ mission "bactrian search 3b-1"
 	on complete
 		event "bactrian for sale" #33
 		conversation
-			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it."`
+			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
 				`	"Yes, but I ran into some problems so I want a bit more for the bounty."`
 				`	"Yes I did, here are the schematic."`
@@ -1146,12 +1145,12 @@ mission "bactrian search 3b-2"
 				`	Unholster your handgun and take a shot.`
 				`	Head back into the hall and wait for your crew.`
 					goto slowsearch2
-			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practices in the gun range was a really bad idea.)`
+			`	You take a few steps into the room and aim...and...miss (you realize that skipping all those practice sessions in the gun range was a really bad idea.)`
 			`	You have to roll to the side to avoid the claws as the big cat comes flying at you.  Backing away you start pulling the trigger as fast as you can. By sheer luck one of your shots hit it in the head and you just sit down trying to catch your breath.`
 			`	A few minutes later your crew shows up and you tell them to start looking for datadisks.`
 				goto foundit
 			label foundit
-			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.` #completed # mission "bactrian search 3: done"
+			`	You don't find anything useful on the data hexes. But you were able to hook up a generator to the main computer and download the schematics directly from the computer core.`
 			choice
 				`	Look for more treasures on the ship.`
 					goto treasurehunter
@@ -1176,7 +1175,7 @@ mission "bactrian search 3b-2"
 	on complete
 		event "hepatica for sale" #33
 		conversation
-			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it."`
+			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
 				`	"Yes, but I ran in to some problems and want bit more for the bounty."`
 				`	"I did, here are the schematic."`
