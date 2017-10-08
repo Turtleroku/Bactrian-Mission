@@ -10,11 +10,11 @@ mission "bacsearch 1"
 		attributes deep
 	destination Valhalla
 	to offer
-		has "free worlds plot completed
+		has "free worlds plot completed"
 	on offer
 		conversation
-			`While your ship is refueling, you go to the bar to see if you can find some work. After the bartender brings the Juma Jam juice you ordered, you ask,
-			`	"Do you know of any special jobs not on the boards right now?"
+			`While your ship is refueling, you go to the bar to see if you can find some work. After the bartender brings the Juma Jam juice you ordered, you ask,"`
+			`	"Do you know of any special jobs not on the boards right now?"`
 			`	"From what I've heard the Deep just put a bounty out for a nasty pirate fleet and there is a priority shipment from Valhalla to Memory waiting for transport."`
 			choice
 				`	"Where are these Pirates raiding?"`
@@ -103,7 +103,7 @@ mission "bactrian search 2a"
 	to fail
 		has "bactrian search: PMB: active"
 	on offer
-		event "pirate moon base lock
+		event "pirate moon base lock"
 		conversation
 			`	You arrive at Alexandria station and are stunned by the amount of books and documents you see on just the main floor.`
 			`An automated message greets you, "The information available at the Alexandria store house requires 3,094 floors to store all the physical and ...." You ignore the rest and start looking for a computer terminal. While searching through the files a chipper librarian walks up and asks "Would you like any assistance?"`
@@ -116,7 +116,7 @@ mission "bactrian search 2a"
 			`	Your body is found many years later in section "Q" apparently you died from dehydration. Sadly you never found the blueprints.`
 				die
 			label librarians
-			`	"Oh that's so cool, I'm doing my thesis on early colonization of the dirtbelt. You can find everything in the computer or in section 1692 on floor 238. Make sure you look at the testing memo's. Good luck!"
+			`	"Oh that's so cool, I'm doing my thesis on early colonization of the dirtbelt. You can find everything in the computer or in section 1692 on floor 238. Make sure you look at the testing memo's. Good luck!"`
 			`	You mutter to yourself about how the librarians back home were more helpful.`
 			choice
 				`Search in the computer.`
@@ -190,7 +190,7 @@ mission "bactrian search 2a"
 					goto compmenu
 
 			label papermenu
-			`	You find your way to section 1692 on floor 238 and see a Bactrian model in the middle of the aisle. It's a 1/10000th scale model with all the bells and whistles of the real thing! One whole wall is devoted to "Mission Records" and on the other has the public commentaries, testing memos, and other articles that were written about the Lionheart Bactrian.
+			`	You find your way to section 1692 on floor 238 and see a Bactrian model in the middle of the aisle. It's a 1/10000th scale model with all the bells and whistles of the real thing! One whole wall is devoted to "Mission Records" and on the other has the public commentaries, testing memos, and other articles that were written about the Lionheart Bactrian.`
 			choice
 				`	Inspect the Bactrian model`
 					goto bacmodel
@@ -201,7 +201,7 @@ mission "bactrian search 2a"
 				`	Go back`
 					goto librarymenu
 			label bacmodel
-			`	The impressive 1/10000th scale model was bristling with all the gunports and sensor clusters on surface. The small Firebird and tiny human next made the Bactrian look even bigger. It was just an empty shell though as none of the internal systems were modeled. Perhaps you can find the its schematics the one of other sections.
+			`	The impressive 1/10000th scale model was bristling with all the gunports and sensor clusters on surface. The small Firebird and tiny human next made the Bactrian look even bigger. It was just an empty shell though as none of the internal systems were modeled. Perhaps you can find the its schematics the one of other sections.`
 			choice
 				`	Go back`
 					goto papermenu
@@ -249,7 +249,7 @@ mission "bactrian search 2a"
 			label lsdone
 			`	After a whole day of searching you know a lot more about the Bactrian but didn't find its schematics. You don't leave empty handed; Buried in all the paper work you found schematics for the Crataegus, one of the two sister ships of the Bactrian. Maybe you could find someone at Lionheart to build the Crataegus for you.`
 			choice
-				`Return to your ship and tell your crew, "we are going to Featherweight".`
+				`Return to your ship and tell your crew, "We are going to Featherweight".`
 			`	As you start up the hyperdrive you hear them groaning about the weird people on Featherweight.`
 				accept
 			label lsnotdone
@@ -273,7 +273,7 @@ mission "bacsearch 1b pirates"
 	destination Freedom
 	to offer
 		has "bacsearch 1: done"
-		has "reputation: Pirates" <= 0"
+		has "reputation: Pirate" < 0"
 	to fail
 		has "bactrian search 2a: active"
 	npc
@@ -419,7 +419,7 @@ mission "bactrian search: Quandry"
 					accept
 				`	"Sorry I don't have the time."`
 					decline
-		on enter Mintaka
+	on enter Mintaka
 		fail
 
 mission "bactrian search: 2b-b2"
@@ -431,8 +431,7 @@ mission "bactrian search: 2b-b2"
 	to offer
 		has "bactrian search: 2b-b1: done"
 	on offer
-		dialog
-			"As you are landing on Haven you notice an interceptor flying at full power coming around the far side of the star and jump to hyperspace."`
+		dialog "As you are landing on Haven you notice an interceptor flying at full power coming around the far side of the star and jump to hyperspace."
 	on enter Alnilam
 		dialog
 			"No sign of the interceptor. You weren't that far behind, maybe it went to Almaaz."
@@ -471,7 +470,7 @@ mission "bactrian search: 2b special"
 	landing
 	source Valhalla
 	waypoint Almaaz
-	desitination "Pirate Moon Base"
+	destination "Pirate Moon Base"
 	to offer
 		has "bacsearch 1: done"
 		"reputation: Pirates" > 0
@@ -490,7 +489,7 @@ mission "bactrian search: 2b special"
 		ship "Hawk" "Queen of Jezebel"
 		ship "Hawk" "Knife of Djinn"
 	on offer
-		set "reputation: Northern Pirates" = 10
+		"reputation: Northern Pirates" = 10
 	on enter Almaaz
 		conversation
 			`	Within seconds of exiting hyperspace you are met by a squad of pirate interceptors. The captian of the Sword of Amon hails you, "<first>, yall are tresspass'n in me system" as he gives you a piratey wink.'`
@@ -532,9 +531,9 @@ mission "bactrian search: PMB"
 			choice
 				`	"You have my word as a captain."`
 					goto makedeal
-				`	"I'm going to tell everyone about this base it'll be awesome."
+				`	"I'm going to tell everyone about this base it'll be awesome."`
 					goto joke
-				`	"I already informed the navy on my way in."
+				`	"I already informed the navy on my way in."`
 					goto reportlose
 			label reportlose
 			`	You are forcibly conscripted to work at the refueling station in the spaceport. Every day you regret making that joke.`
@@ -546,7 +545,7 @@ mission "bactrian search: PMB"
 			choice
 				`	"I saw a large warship on the way in, was that the Bactrian? I'll pay 1 million credits for its schematics."`
 					goto paybactrian?
-				`	"I'm looking for the Bactrian schematics, I can pay 1 million credits."
+				`	"I'm looking for the Bactrian schematics, I can pay 1 million credits."`
 					goto paynohepatica?
 			label paybactrian?
 			`	"No, that's one of her sister models, the Hepatica. That old beauty is nearly 800 years old, we've made some modifications over time. Don't even think about asking for a tour, I'm not letting a sketchy person like you wandering around my ship."`
@@ -574,8 +573,7 @@ mission "bactrian search: PMB"
 				`	"I don't want to pay that much."`
 					goto attackmoonbasemaybe
 			label payforinfo
-			apply
-				payment -5000000
+#				payment -5000000
 				set "hepatica unlocked"
 			`	"Go to the Mebutsa system, you will have your data and be refueled within the hour." As she walks away she slides into a piratey slang yelling at her subordinates with ar's and mates. It seems she enjoys being the pirate captain.`
 				accept
@@ -595,8 +593,7 @@ mission "bactrian search: PMB"
 			`	You walk back to your ship, planning exactly how to blow up this moon.`
 				decline
 			label piratejoke
-			apply
-				payment -4800000
+#				payment -4800000
 				set "hepatica unlocked"
 			`	She says, "Hahaha, I am starting to like you, okay 4.8 million and it's all yours."`
 			choice
@@ -614,13 +611,11 @@ mission "bactrian search: PMB"
 				`	"I don't want to pay that much."`
 					goto attackmoonbasemaybe
 			label payforinfo2
-			apply
-				payment -3000000
+#				payment -3000000
 			`	"Go to the Mebutsa system, you will have your data and be refueled within the hour." As she walks away she slides into a piratey slang yelling at her subordinates with ar's and mates. It seems she enjoys being the pirate captain a bit.`
 				accept
 			label piratejoke2
-			apply
-				payment -2800000
+#				payment -2800000
 			`	She says, "Hahaha, I am starting to like you, okay 2.8 million and it's all yours."`
 			choice
 				`	"You are so generous...now where was the expedition headed?"`
@@ -628,7 +623,7 @@ mission "bactrian search: PMB"
 			`	"Go to the Mebutsa system, you will have your data and be refueled within the hour." As she walks away she slides into a piratey slang yelling at her subordinates with ar's and mates. It seems she enjoys being the pirate captain a bit.`
 				accept
 	on enter Almaaz
-		event "pirate moon base lock
+		event "pirate moon base lock"
 	on fail
 		dialog `You failed to convince the pirates to share thier information, your only chance is to go to the library at Alexandria.`
 	on accept
@@ -645,7 +640,7 @@ ship "Hepatica" "Modified Hepatica"
 		"Hai Tracker Pod" 4
 		"Hai Tracker" 400
 		"Electron Turret" 4
-		""Heavy Anti-Missle Turret" 2
+		"Heavy Anti-Missile Turret" 2
 		"Plasma Turret" 2
 		"Triple Plasma Core"
 		"Systems Core (Large)"
@@ -669,7 +664,7 @@ ship "Hepatica" "Modified Hepatica"
 	turret "Heavy Anti-Missle Turret"
 	turret "Heavy Anti-Missle Turret"
 	turret "Plasma Turret"
-	turret "Plasma Turret`"
+	turret "Plasma Turret"
 
 mission epblanding
 	name "Defeat the pirate fleet"
@@ -770,7 +765,7 @@ mission "epbguide"
 				launch
 		set "bacsearch 2"
 	on enter Almaaz
-		event "pirate moon base lock
+		event "pirate moon base lock"
 
 
 #~part3
@@ -818,9 +813,7 @@ mission "bactrian search 3a-1"
 			`	The ship had been throughly scavenged as you find only a few data hexes throughout the ship. Eventually you reach the bridge.`
 				goto slowsearch2
 			label slowsearch2
-			apply
-				"crew" -1
-			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy ripping his head off (flies into Billy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
+			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
 			`	Three of the crew attempt to stabilize Leroy and take him back to the ship. You search the bridge for any data hexes that might have been left over.`
 				goto foundit
 			label funsearch
@@ -918,9 +911,7 @@ mission "bactrian search 3a-2"
 			`	The ship had been throughly scavenged as you find only a few data hexes throughout the ship. Eventually you reach the bridge.`
 				goto slowsearch2
 			label slowsearch2
-			apply
-				"crew" -1
-			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy ripping his head off (flies into Billy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
+			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
 			`	Three of the crew attempt to stabilize Leroy and take him back to the ship. You search the bridge for any data hexes that might have been left over.`
 				goto foundit
 			label funsearch
@@ -1025,9 +1016,7 @@ mission "bactrian search 3b-1"
 			`	The ship had been throughly scavenged as you find only a few data hexes throughout the ship. Eventually you reach the bridge.`
 				goto slowsearch2
 			label slowsearch2
-			apply
-				"crew" -1
-			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy ripping his head off (flies into Billy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
+			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
 			`	Three of the crew attempt to stabilize Leroy and take him back to the ship. You search the bridge for any data hexes that might have been left over.`
 				goto foundit
 			label funsearch
@@ -1068,7 +1057,7 @@ mission "bactrian search 3b-1"
 				`	Plot a course back to Valhalla to collect your reward.`
 					launch
 	on accept
-		"bactrian search 3"
+		set "bacsearch 3"
 	on complete
 		event "bactrian for sale" #33
 		conversation
@@ -1128,9 +1117,7 @@ mission "bactrian search 3b-2"
 			`	The ship had been throughly scavenged as you find only a few data hexes throughout the ship. Eventually you reach the bridge.`
 				goto slowsearch2
 			label slowsearch2
-			apply
-				"crew" -1
-			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy ripping his head off (flies into Billy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
+			`	You are waiting for the rest of the search party to arrive when suddenly Leroy Jenkins says "Screw it" and runs onto the bridge. Out of the corner of your eye a large spike tiger flies into Leroy knocking him to the ground and taking a big bite out of this shoulder). immediately everyone starts opening fire and kills the spike tiger.`
 			`	Three of the crew attempt to stabilize Leroy and take him back to the ship. You search the bridge for any data hexes that might have been left over.`
 				goto foundit
 			label funsearch
@@ -1171,7 +1158,7 @@ mission "bactrian search 3b-2"
 				`	Plot a course back to Valhalla to collect your reward.`
 					launch
 	on accept
-		"bactrian search 3"
+		set "bacsearch 3"
 	on complete
 		event "hepatica for sale" #33
 		conversation
