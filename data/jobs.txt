@@ -1,0 +1,49 @@
+﻿mission "Pathogens to Memory"
+	name "Transport Research Pathogens to Memory"
+	job
+	description "Deliver Class 1 pathogens to <destination>. Payment is <payment>."
+	cargo 20
+	source Valhalla
+	to offer
+		Has "bacsearch 1: offered"
+	attributes north
+	destination "Memory"
+	on complete
+		payment
+		payment 100000
+		dialog "You drop off your cargo of pathogens and collect your payment of <payment>."
+
+
+
+mission "Pirates at Alphard"
+	name "Hunt down Revenge of Ra"
+	job
+	description "A Marauder vessel named <npc>, leading a fleet, has been attacking merchants near the <system> system. Destroy the whole fleet and return to Valhalla for payment (<payment>)."
+	source Valhalla
+	to offer
+		has "bacsearch 1: offered"
+	attributes north
+	npc kill
+	government Bounty
+	system Alphard
+	personality heroic nemesis staying
+		ship "Maurauder Leviathan" "Revenge of Ra"
+		ship "Marauder Raven" "Chains of Anubis"
+		ship "Marauder Raven" "Screeches of "
+		ship "Marauder Raven" "Sting of Hedatet"
+		ship "Marauder Raven" "Kherty's Pulverizer"
+		ship "Marauder Raven" "Wepwawet the chaotic"
+		ship "Modified Argosy" "Boon of Mehit"
+		ship "Modified Argosy" "Silo of Menhit"
+		ship "Osprey" "Bennu's Flight"
+		ship "Osprey" "Library of Seshat"
+		ship "Osprey" "Drunk Shezmu"
+		ship "Osprey" "Shu the light"
+		ship "Marauder Falcon" "Rage of Kek"
+		ship "Marauder Falcon" "Roar of Maahas"
+		personality heroic staying nemesis target
+
+		dialog "The <npc> and their fleet have been eliminated. You can claim the bounty payment by returning to <destination>."
+	on complete
+		payment 500000
+		dialog "The government of <planet> gratefully pays you <payment> for eliminating the <npc> and their fleet."
