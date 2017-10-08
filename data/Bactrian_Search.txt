@@ -686,19 +686,19 @@ mission epblanding
 		government "Northern Pirates"
 		personality heroic nemesis staying
 		ship "Modified Hepatica" "Eye of Horus" tag nocapture
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Marauder Falcon" "xxxx" tag nocapture
-		ship "Marauder Falcon" "xxxx" tag nocapture
+		ship "Marauder Raven" "Blade of Anhur"
+		ship "Marauder Raven" "Arrow of Anat"
+		ship "Marauder Raven" "Apedemak's Roar"
+		ship "Marauder Raven" "Blubber of Montu"
+		ship "Marauder Raven" "Beak of Nekhbet"
+		ship "Marauder Raven" "Reshep the Weak"
+		ship "Marauder Raven" "Yelp of Wepwawet"
+		ship "Osprey" "Beard of Imsety" tag nocapture
+		ship "Osprey" "Cackle of Duamutef" tag nocapture
+		ship "Osprey" "Shriek of Hapi" tag nocapture
+		ship "Osprey" "Gaze of Qebehsenuef" tag nocapture
+		ship "Marauder Falcon" "Hound of Anubis" tag nocapture
+		ship "Marauder Falcon" "Song of Hathor" tag nocapture
 		dialog "Now you should be able to look through the base"
 	on offer
 		conversation
@@ -727,19 +727,19 @@ mission epbconvo
 		personality heroic nemesis staying
 #~ ship names
 		ship "Modified Hepatica" "Eye of Horus" tag nocapture
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Marauder Raven" "xxxx"
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Osprey" "xxxx" tag nocapture
-		ship "Marauder Falcon" "xxxx" tag nocapture
-		ship "Marauder Falcon" "xxxx" tag nocapture
+		ship "Marauder Raven" "Blade of Anhur"
+		ship "Marauder Raven" "Arrow of Anat"
+		ship "Marauder Raven" "Apedemak's Roar"
+		ship "Marauder Raven" "Blubber of Montu"
+		ship "Marauder Raven" "Beak of Nekhbet"
+		ship "Marauder Raven" "Reshep the Weak"
+		ship "Marauder Raven" "Yelp of Wepwawet"
+		ship "Osprey" "Beard of Imsety" tag nocapture
+		ship "Osprey" "Cackle of Duamutef" tag nocapture
+		ship "Osprey" "Shriek of Hapi" tag nocapture
+		ship "Osprey" "Gaze of Qebehsenuef" tag nocapture
+		ship "Marauder Falcon" "Hound of Anubis" tag nocapture
+		ship "Marauder Falcon" "Song of Hathor" tag nocapture
 		dialog "Now that the defense fleet is destroyed you can investigate the moon more."
 
 mission "epbguide"
