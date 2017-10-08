@@ -122,7 +122,7 @@ mission "Hepatica Available"
 	destination Wayfarer
 	on offer
 		conversation
-			scene ship/bactrian
+			scene scene/baclion
 			`You receive a message from Clarissa: "Captain <last>, I am contacting on behalf of Frank Lionheart, CEO of Lionheart Shipyards at Valhalla. We are pleased to inform you that the Bactrian and Hepatica are now available for sale in the deep. Have a good day."`
 				decline
 
