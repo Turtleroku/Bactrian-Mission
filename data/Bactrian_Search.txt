@@ -489,7 +489,7 @@ mission "bactrian search: 2b special"
 		ship "Hawk" "Queen of Jezebel"
 		ship "Hawk" "Knife of Djinn"
 	on offer
-		"reputation: Northern Pirates" = 10
+		"reputation: Northern Pirates" = 100
 	on enter Almaaz
 		conversation
 			`	Within seconds of exiting hyperspace you are met by a squad of pirate interceptors. The captian of the Sword of Amon hails you, "<first>, yall are tresspass'n in me system" as he gives you a piratey wink.'`
@@ -854,7 +854,7 @@ mission "bactrian search 3a-1"
 				`	Plot a course back to Valhalla to collect your reward.`
 					launch
 	on complete
-		event "bactrian for sale" #33
+		event "bactrian for sale" 33
 		conversation
 			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
@@ -952,7 +952,7 @@ mission "bactrian search 3a-2"
 				`	Plot a course back to Valhalla to collect your reward.`
 					launch
 	on complete
-		event "crataegus for sale" #33
+		event "crataegus for sale" 33
 		conversation
 			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
@@ -1059,7 +1059,7 @@ mission "bactrian search 3b-1"
 	on accept
 		set "bacsearch 3"
 	on complete
-		event "bactrian for sale" #33
+		event "bactrian for sale" 33
 		conversation
 			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
@@ -1160,7 +1160,7 @@ mission "bactrian search 3b-2"
 	on accept
 		set "bacsearch 3"
 	on complete
-		event "hepatica for sale" #33
+		event "hepatica for sale" 33
 		conversation
 			`	After landing at the spaceport you find Frank talking to some frieghter captians and walk up saying. "Hello Frank, how are you doing?" He replies "Hello <first>, I've been doing well. Did you find it?"`
 			choice
