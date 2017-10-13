@@ -2,6 +2,10 @@
 # Endless Sky is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 # Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
+shipyard "Lionheart Advanced"
+	remove "Bactrian"
+
+
 
 mission "bacsearch 1"
 	name "Interesting Bounty"
@@ -62,18 +66,7 @@ mission "bacsearch 1"
 				`	"No thanks, I don't need your help finding missions."`
 					decline
 	on complete
-		conversation
-			`You head over to the job board to see if you can find Frank. A man in a lionheart suit is talking to some navy officers about the bounty so you wait till they are done. When the officers leave you approach him and introduce yourself, "Hello, I'm <first> are yo..." He cuts you off saying, "Hello, I am Frank do you want to make 10 million credits."`
-			`Ignoring his brusque manner you ask,`
-			choice
-				`	"Are there any strings attached?"`
-					goto question
-				`	"No that sounds too suspicious."`
-			label question
-			`	"Well, I want blueprints for the Lionheart Bactrian but they were lost about 500 years ago during the alpha wars. Legend has it that one the last missions to colonize Almaaz was hijacked by pirates in the north. Personally I think you should go to the Alexandria library and see what you can dig up there. If you can find the schematics reward is yours."`
-			choice
-				`	"Okay I'll let you know when I find it."`
-				`	"That sounds like a wild goose chase."`
+
 	on accept
 		set "bacsearch 1"
 	on decline
@@ -86,10 +79,27 @@ mission "bacsearch 1b library"
 	destination Alexandria
 	to offer
 		has "bacsearch 1: done"
+	on offer
+		conversation
+			`You head over to the job board to see if you can find Frank. A man in a lionheart suit is talking to some navy officers about the bounty so you wait till they are done. When the officers leave you approach him and introduce yourself, "Hello, I'm <first> are yo..." He cuts you off saying, "Hello, I am Frank do you want to make 10 million credits."`
+			`Ignoring his brusque manner you ask,`
+			choice
+				`	"Are there any strings attached?"`
+					goto question
+				`	"No that sounds too suspicious."`
+					decline
+			label question
+			`	"Well, I want blueprints for the Lionheart Bactrian but they were lost about 500 years ago during the alpha wars. Legend has it that one the last missions to colonize Almaaz was hijacked by pirates in the north. Personally I think you should go to the Alexandria library and see what you can dig up there. If you can find the schematics reward is yours."`
+			choice
+				`	"Okay I'll let you know when I find it."`
+				`	"That sounds like a wild goose chase."`
+					decline
 	to fail
 		has "bacsearch 2"
-
-#~part2
+	on decline
+		fail "bacsearch 1b pirates"
+		fail "bactrian search: 2b special guide"
+		fail "bactrian search: 2b special"
 
 mission "bactrian search 2a"
 	landing
@@ -175,7 +185,7 @@ mission "bactrian search 2a"
 				`	Go back`
 					goto compmenu
 			label baclang
-			scene scene/baclang #or baclang-orig
+			scene scene/baclang
 			`	Bactrian was an indo-european based language which was spoken during the middle Iranian period. It was the official language of the Kushan and Hephthalite empires during the 2nd to 7th centuries AD but had become extinct by 900 AD.`
 			choice
 				`	Go back`
@@ -208,7 +218,6 @@ mission "bactrian search 2a"
 			label bacmisrec
 			apply
 				set "Library Search book"
-				#~ too long
 			`	After cross-referencing all the mission records you found one anomaly. Apparently during a colony expansion on Featherweight a Bactrian malfunctioned and crashed into the mountains. Some of the records are black out as classified but from what you can find they never recovered the ship. Perhaps you can find out more.`
 			choice
 				`	Go back`
@@ -263,8 +272,6 @@ mission "bactrian search 2a"
 		fail "bacsearch 1b pirates"
 		fail "bactrian search: 2b special"
 		set "bacsearch 2"
-
-#~ fix bacsearch 1b pirates to be in system b4 Almaaz, 2b-a for friendly to north, 2b-b to hostile to north lead to interceptor chase.
 
 mission "bacsearch 1b pirates"
 	landing
@@ -339,7 +346,7 @@ mission "bactrian search: friend"
 		"reputation: Northern Pirates" = 1000
 		fail
 
-mission "bactrian search: 2b-a" #friendly way
+mission "bactrian search: 2b-a"
 	name "Following the Clues: Pirates"
 	landing
 	source Freedom
@@ -360,7 +367,7 @@ mission "bactrian search: 2b-a" #friendly way
 			`	"As you enter Unagi a set of coordinates appear on your viewscreen. They lead to one of the moons orbiting the gas giant."`
 		fail "bactrian search: 2a"
 
-mission "bactrian search: 2b-b1" #hostile way
+mission "bactrian search: 2b-b1"
 	landing
 	invisible
 	source Freedom
@@ -392,7 +399,6 @@ mission "bactrian search: 2b-b1" #hostile way
 		dialog
 			"You see the Interceptor, named Occam's Razor, jumping to hyperspace again toward Arneb."
 
-#~
 mission "bactrian search: Quandry"
 	landing
 	invisible
@@ -452,8 +458,6 @@ mission "bactrian search: 2b-b2"
 			`	A set of coordinates show up on your viewscreen leading you down to the surface. The only thing left to do is land on the moon.`
 				accept
 
-#~
-
 mission "bactrian search: 2b special guide"
 	landing
 	name "Following the Clues: Pirates"
@@ -461,7 +465,7 @@ mission "bactrian search: 2b special guide"
 	destination Freedom
 	to offer
 		has "bacsearch 1: done"
-		"reputation: Pirates" > 0
+		"reputation: Pirate" > 0
 	to fail
 		has "bacsearch 2"
 
@@ -473,7 +477,7 @@ mission "bactrian search: 2b special"
 	destination "Pirate Moon Base"
 	to offer
 		has "bacsearch 1: done"
-		"reputation: Pirates" > 0
+		"reputation: Pirate" > 0
 	to fail
 		has "bacsearch 2"
 	npc
@@ -504,7 +508,7 @@ mission "bactrian search: 2b special"
 			`	"Meet us at Unagi to discuss this further."`
 				accept
 	on enter Unagi
-		dialog `The pirates take you to a moon base in the uninhabited Unagi system. As you approach, a three mile long section of the moon's surface separates revealing large landing docks and an enormous warship. You try to get a sensor sweep of the spaceport and warships but your sensors only register the moon rock. Apparently this moon base is more hidden than you thought.`
+		dialog `The pirates take you to a moon base in the uninhabited Unagi system. As you approach, a three mile long section of the moon's surface separates revealing large landing docks and an enormous warship. You try to get a sensor sweep of the spaceport and warships but your sensors only register the moon rock.`
 	on complete
 		fail "bactrian search: 2a"
 		set "bacsearch 2"
@@ -557,7 +561,7 @@ mission "bactrian search: PMB"
 				`	"Would three million for both speed things up."`
 					goto haggling
 			label paynohepatica?
-			`	She stares straight at you with her one good eye. "I don't have the schematics for the Bactrian but I do know where you might find one. But it's going to be a hassle to copy all the data, I'd have to pull some crews off repairs and maintenance. You are going to have to wait awhile to get all that done." Her one eye is starting to make you feel creepy.`
+			`	She stares straight at you with her one good eye. "I don't have the schematics for the Bactrian but I do know where you might find one. But it's going to be a hassle to copy all the data, I'd have to pull some crews off repairs and maintenance. You are going to have to wait awhile to get all that done."`
 			choice
 				`	"That's as high as I'm going."`
 					goto haggling2
@@ -573,7 +577,6 @@ mission "bactrian search: PMB"
 				`	"I don't want to pay that much."`
 					goto attackmoonbasemaybe
 			label payforinfo
-#				payment -5000000
 				set "hepatica unlocked"
 			`	"Go to the Mebutsa system, you will have your data and be refueled within the hour." As she walks away she slides into a piratey slang yelling at her subordinates with ar's and mates. It seems she enjoys being the pirate captain.`
 				accept
@@ -593,7 +596,6 @@ mission "bactrian search: PMB"
 			`	You walk back to your ship, planning exactly how to blow up this moon.`
 				decline
 			label piratejoke
-#				payment -4800000
 				set "hepatica unlocked"
 			`	She says, "Hahaha, I am starting to like you, okay 4.8 million and it's all yours."`
 			choice
@@ -611,11 +613,9 @@ mission "bactrian search: PMB"
 				`	"I don't want to pay that much."`
 					goto attackmoonbasemaybe
 			label payforinfo2
-#				payment -3000000
 			`	"Go to the Mebutsa system, you will have your data and be refueled within the hour." As she walks away she slides into a piratey slang yelling at her subordinates with ar's and mates. It seems she enjoys being the pirate captain a bit.`
 				accept
 			label piratejoke2
-#				payment -2800000
 			`	She says, "Hahaha, I am starting to like you, okay 2.8 million and it's all yours."`
 			choice
 				`	"You are so generous...now where was the expedition headed?"`
@@ -633,7 +633,6 @@ mission "bactrian search: PMB"
 		fail "bactrian search: 2a"
 		set "bacsearch 2"
 
-#~
 ship "Hepatica" "Modified Hepatica"
 	outfits
 		"Electron Beam" 2
@@ -720,7 +719,6 @@ mission epbconvo
 		system Unagi
 		government "Pirate"
 		personality heroic nemesis staying
-#~ ship names
 		ship "Modified Hepatica" "Eye of Horus" tag nocapture
 		ship "Marauder Raven" "Blade of Anhur"
 		ship "Marauder Raven" "Arrow of Anat"
@@ -766,9 +764,6 @@ mission "epbguide"
 		set "bacsearch 2"
 	on enter Almaaz
 		event "pirate moon base lock"
-
-
-#~part3
 
 mission "bactrian search 3a-1"
 	name "bac"
@@ -991,7 +986,7 @@ mission "bactrian search 3b-1"
 				`	Search the Western mountain range.`
 					goto west
 			label ne
-			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.` #Low altitude scans of the rest of the mountain range revealed nothing
+			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.`
 			choice
 				`	Search the Western mountian range.`
 					goto west
@@ -1092,7 +1087,7 @@ mission "bactrian search 3b-2"
 				`	Search the Western mountain range.`
 					goto west
 			label ne
-			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.` #Low altitude scans of the rest of the mountain range revealed nothing
+			`	There was sensor ping in the first valley but it was only a high concentration of iron ore.`
 			choice
 				`	Search the Western mountian range.`
 					goto west
@@ -1176,3 +1171,157 @@ mission "bactrian search 3b-2"
 			choice
 				`"I also found the schematics for one of its sister ships the "Hepatica."`
 			`	"You found another one, this is fantastic! I'll take care of both schematics, we will have the ships available in a month or so.`
+
+event "pirate moon base lock"
+	system Unagi
+		government Pirate
+		habitable 320
+		remove object
+			sprite planet/gas13
+			distance 2336.98
+			period 2526.2
+			object
+				sprite planet/rock7
+				distance 293
+				period 13.4563
+		add object
+			sprite planet/gas13
+			distance 2336.98
+			period 2526.2
+			object
+				sprite planet/rock7
+				distance 293
+				period 13.4563
+
+planet "Pirate Moon Base"
+	attributes "Northern Pirates"
+	landscape land/mfield3
+	description `This base was developed by an unknown pirate gang. It's secrecy is due to the low quantity of refactory and heavy metals in the moons crust. There is a large subterranian spaceport the pirates used to house their fleet.`
+	spaceport `The spaceport is filled with pirate ships being repaired and refueled. There are also a few large battle ships docked as well.`
+	shipyard "Basic Ships"
+	shipyard "Northern Pirates"
+	shipyard "Deep Sky Advanced"
+	outfitter "Common Outfits"
+	outfitter "Ammo North"
+	outfitter "Delta V Advanced"
+	outfitter "Kraz Basics"
+	outfitter "Pirate Outfits"
+
+government "QuandryMerchant"
+	swizzle 5
+	
+	"player reputation" 101
+	"friendly hail" "friendly civilian"
+	"hostile hail" "hostile civilian"
+
+government "Northern Pirates"
+	swizzle 6
+	color .78 0 0
+	"player reputation" -200
+	"attitude toward"
+		"Merchant" -.1
+		"Pirate" 1
+		"Syndicate" -.01
+		"Korath" -.01
+		"Author" -.01
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly pirate"
+	"hostile hail" "hostile pirate"
+
+event "bactrian for sale"
+	set "bactrian available"
+	shipyard "Lionheart Advanced"
+		"Bactrian"
+event "hepatica for sale"
+	set "hepatica available"
+	shipyard "Lionheart Advanced"
+		"Bactrian"
+		"Hepatica"
+event "crataegus for sale"
+	set "crataegus available"
+	shipyard "Lionheart Advanced"
+		"Bactrian"
+		"Crataegus"
+
+mission "Bactrian Available"
+	landing
+	invisible
+	to offer
+		has "bactrian available"
+	destination Wayfarer
+	on offer
+		conversation
+			scene scene/baclion
+			`You receive a message from Clarissa: "Captain <last>, I am contacting on behalf of Frank Lionheart, CEO of Lionheart Shipyards at Valhalla. We are pleased to inform you that the Bactrian is now available for sale in the deep. Have a good day."`
+				decline
+
+mission "Hepatica Available"
+	landing
+	invisible
+	to offer
+		has "hepatica available"
+	destination Wayfarer
+	on offer
+		conversation
+			scene scene/baclion
+			`You receive a message from Clarissa: "Captain <last>, I am contacting on behalf of Frank Lionheart, CEO of Lionheart Shipyards at Valhalla. We are pleased to inform you that the Bactrian and Hepatica are now available for sale in the deep. Have a good day."`
+				decline
+
+mission "Crataegus Available"
+	landing
+	invisible
+	to offer
+		has "crataegus available"
+	destination Wayfarer
+	on offer
+		conversation
+			scene scene/baclion
+			`You receive a message from Clarissa: "Captain <last>, I am contacting on behalf of Frank Lionheart, CEO of Lionheart Shipyards at Valhalla. We are pleased to inform you that the Bactrian and Crataegus are now available for sale in the deep. Have a good day."`
+				decline
+
+mission "Transport Pathogens to Memory"
+	job
+	description "Deliver Class 1 pathogens to Memory. Payment will be <payment>."
+	cargo "Class 1 Pathogens" 20
+	source Valhalla
+	destination Memory
+	to offer
+		has "bacsearch 1"
+	on accept
+		dialog "You watch as a team of specialists in HAZMAT gear load the cargo aboard your ship."
+	on complete
+		payment 100000
+		dialog "You drop off your cargo of pathogens and collect your payment of <payment>."
+
+mission "Hunt down Revenge of Ra"
+	description "A Marauder vessel named Revenge of Ra has been leading a fleet and attacking merchants near the Alphard system. Destroy the whole fleet and return to Valhalla for payment <payment>."
+	job
+	source Valhalla
+	waypoint Alphard
+	destination Valhalla
+	to offer
+		has "bacsearch 1"
+	on accept
+		dialog "A navy officer gives you priority bounty-hunter papers for this job."
+	npc kill
+		government Bounty
+		system Alphard
+		personality heroic nemesis staying
+		ship "Maurauder Leviathan" "Revenge of Ra"
+		ship "Marauder Raven" "Chains of Anubis"
+		ship "Marauder Raven" "Kherty's Pulverizer"
+		ship "Marauder Raven" "Wepwawet the chaotic"
+		ship "Modified Argosy" "Boon of Mehit"
+		ship "Modified Argosy" "Silo of Menhit"
+		ship "Osprey" "Bennu's Flight"
+		ship "Osprey" "Library of Seshat"
+		ship "Osprey" "Drunk Shezmu"
+		ship "Osprey" "Shu the light"
+		ship "Marauder Falcon" "Rage of Kek"
+		ship "Marauder Falcon" "Roar of Maahas"
+		dialog "Their fleet has been eliminated. You can claim the bounty by returning to <destination>."
+	on complete
+		payment 500000
+		dialog "The government of <planet> gratefully pays you <payment> for eliminating the <npc> and their fleet."
+
